@@ -1,17 +1,16 @@
 import { Mark } from "@/components/icons";
+import { VisitorMetrics } from "@/components/visitor-metrics";
 
 export function ThreatConsole() {
   return (
     <div className="corners relative overflow-hidden border border-line bg-panel/70 shadow-[0_30px_120px_-40px_var(--shadow-acid)] backdrop-blur-sm">
       <div className="flex h-9 items-center justify-between border-b border-line px-3">
         <div className="flex items-center gap-1.5">
-          <span className="size-1.5 rounded-full bg-line-bright" />
-          <span className="size-1.5 rounded-full bg-line-bright" />
           <span className="size-1.5 rounded-full bg-acid/70" />
+          <span className="text-acid font-mono text-[9px] uppercase tracking-[0.18em] ">live</span>
         </div>
         <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-dim">
-          ops.console <span className="text-line-bright">/</span>{" "}
-          <span className="text-acid">live</span>
+          operations console
         </p>
         <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-dim">
           aes-256
@@ -52,11 +51,7 @@ export function ThreatConsole() {
           </div>
         </div>
 
-        <div className="mt-5 grid grid-cols-3 divide-x divide-line border-y border-line font-mono">
-          <Metric label="Surface" value="1,284" />
-          <Metric label="Open crit" value="0" accent />
-          <Metric label="MTTD" value="4m 12s" />
-        </div>
+        <VisitorMetrics />
 
         <div className="mt-4 space-y-1.5 font-mono text-[10px] leading-relaxed">
           <p className="text-dim">
@@ -74,27 +69,6 @@ export function ThreatConsole() {
           </p>
         </div>
       </div>
-    </div>
-  );
-}
-
-function Metric({
-  label,
-  value,
-  accent = false,
-}: {
-  label: string;
-  value: string;
-  accent?: boolean;
-}) {
-  return (
-    <div className="px-2 py-3 first:pl-0 last:pr-0">
-      <p className="text-[8px] uppercase tracking-[0.16em] text-dim">{label}</p>
-      <p
-        className={`mt-1 text-sm tracking-tight ${accent ? "text-acid" : "text-bone"}`}
-      >
-        {value}
-      </p>
     </div>
   );
 }

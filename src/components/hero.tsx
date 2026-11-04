@@ -70,10 +70,7 @@ export function Hero() {
             <div className="animate-drift">
               <ThreatConsole />
             </div>
-            <div className="mt-4 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.16em] text-dim">
-              <span>Fig. 01 — sample engagement telemetry</span>
-              <span className="text-acid">/ verified</span>
-            </div>
+            
           </div>
         </div>
 
